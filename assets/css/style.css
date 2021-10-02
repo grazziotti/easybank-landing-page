@@ -264,6 +264,7 @@ html, body {
 .articles__card__title {
     margin-top: 0.75rem;
     font-size: 1rem;
+    font-weight: 400;
     color: var(--Dark-Blue);
     transition: .3s;
 }
