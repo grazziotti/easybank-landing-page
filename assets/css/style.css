@@ -392,73 +392,10 @@ html, body {
     color: var(--Lime-Green);
 }
 
-
 @media (max-width: 1170px) {
     .container {
         width: 100%;
         padding: 0 1.5rem;
-    }
-
-
-
-    /* --- header --- */
-    .header__nav {
-        height: 5rem;
-    }
-    
-    .header__main-menu {
-        display: none;
-        justify-content: center;
-        position: absolute;
-        top: 5rem;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        padding: 1.5rem;
-        z-index: 1;
-        background-color: rgba(45, 49, 77, .5);
-    }
-
-    .is-open {
-        display: flex;
-    }
-
-    .is-fixed {
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        z-index: 1;
-    }
-
-    .header__main-menu__list {
-        flex-direction: column;
-        width: 100%;
-        height: fit-content;
-        padding: 1.5rem 0;
-        border-radius: 0.3125rem;
-        background-color: var(--White);
-    }
-
-    .header__main-menu__list__item {
-        justify-content: center;
-        margin: 0.75rem 0;
-    }
-
-    .header__main-menu__list__link {
-        font-size: 1.125rem;
-        color: var(--Dark-Blue);
-    }
-
-    .header__main-menu__list__link::after {
-        display: none;
-    }
-
-    .header__nav .btn {
-        display: none;
-    }
-
-    .header__menu-mobile {
-        display: block;
     }
 
 
@@ -484,7 +421,7 @@ html, body {
         position: relative;
         right: 0;
         width: 100%;
-        height: 85vw;
+        height: 70vw;
         background: url('../images/bg-intro-mobile.svg');
         background-repeat: no-repeat;
         background-size: cover;
@@ -493,7 +430,7 @@ html, body {
 
     .intro__image {
         width: 100%;
-        transform: translateY(-29%);
+        transform: translateY(-40%);
     }
 
     .intro__text-content {
@@ -570,6 +507,119 @@ html, body {
     }
 }
 
+@media (max-width: 770px) {
+    /* --- mobile nav animation --- */
+    [data-anime] {
+        opacity: 0;
+        transition: .3s;
+    }
+    
+    [data-anime="top"] {
+        transform: translateY(-1.25rem);
+    }
+    
+    [data-anime].animate {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+
+    
+    /* --- header --- */
+    .header__nav {
+        height: 5rem;
+    }
+    
+    .header__main-menu {
+        display: none;
+        justify-content: center;
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 1.5rem;
+        z-index: 1;
+        background-color: rgba(45, 49, 77, .5);
+    }
+
+    .is-open {
+        display: flex;
+    }
+
+    .is-fixed {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+    }
+
+    .header__main-menu__list {
+        flex-direction: column;
+        width: 100%;
+        height: fit-content;
+        padding: 1.5rem 0;
+        border-radius: 0.3125rem;
+        background-color: var(--White);
+    }
+
+    .header__main-menu__list__item {
+        justify-content: center;
+        margin: 0.75rem 0;
+    }
+
+    .header__main-menu__list__link {
+        font-size: 1.125rem;
+        color: var(--Dark-Blue);
+    }
+
+    .header__main-menu__list__link::after {
+        display: none;
+    }
+
+    .header__nav .btn {
+        display: none;
+    }
+
+    .header__menu-mobile {
+        display: block;
+    }
+
+    .header__hamburger {
+        display: block;
+        align-self: center;
+        width: 1.5rem;
+        height: .6875rem;
+        border-top: 1px solid;
+        color: rgb(45, 49, 77);
+        transition: .3s;
+    }
+
+    .header__hamburger::before,
+    .header__hamburger::after {
+        content: '';
+        display: block;
+        width: inherit;
+        height: 1px;
+        margin-top: 4px;
+        background-color: currentColor;
+        transition: .3s;
+    }
+
+    .header__hamburger--open {
+        border: transparent;    
+    }
+
+    .header__hamburger--open::before {
+        transform: rotate(135deg);
+    }
+
+    .header__hamburger--open::after {
+        transform: rotate(-135deg);
+        margin-top: -1px;
+    }
+}
+
 @media (max-width: 550px) {
     /* --- intro section --- */
     .intro__title {
@@ -578,6 +628,14 @@ html, body {
 
     .intro__text {
         font-size: 0.9375rem;
+    }
+
+    .intro__image-area {
+        height: 85vw;
+    }
+
+    .intro__image {
+        transform: translateY(-29%);
     }
 
 
